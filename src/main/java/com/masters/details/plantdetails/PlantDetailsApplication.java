@@ -2,6 +2,7 @@ package com.masters.details.plantdetails;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication   /* @SpringBootApplication Annotation consists of
 							@Component - which tells the compiler that the following class is a component and needs compiled
@@ -9,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 							@EnableAutoConfiguration - which enables autoconfiguration to import modules for the Spring Boot to run
 							These annotations ared used to start the Spring Boot Application to run on a server.
 	 					*/
+@ComponentScan(basePackages={"com.masters.details.plantdetails.Contoller"}) // So so the controller can access spring boot
 public class PlantDetailsApplication {
 
 	public static void main(String[] args) {

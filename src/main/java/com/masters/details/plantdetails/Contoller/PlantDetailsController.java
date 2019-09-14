@@ -4,6 +4,7 @@ import com.masters.details.plantdetails.Models.PlantDetails;
 import com.masters.details.plantdetails.Repository.PlantDetailsRepository;
 import com.masters.details.plantdetails.Repository.PowerPlantNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -34,5 +35,16 @@ public class PlantDetailsController {
     public PlantDetails powerPlantId(@PathVariable(value = "id") Integer detailsId) throws PowerPlantNotFoundException{
         return plantdetailsrepo.findById(detailsId)
                 .orElseThrow(() -> new PowerPlantNotFoundException(detailsId));
+    }
+
+    // Delete a power plant information
+    @DeleteMapping("/plantdetails/{id}")
+    public ResponseEntity<?> deleteBook(@PathVariable(value = "id") Integer detailsId) throws PowerPlantNotFoundException {
+        PlantDetails plantdetails = plantdetailsrepo.findById(detailsId)
+                .orElseThrow(() -> new PowerPlantNotFoundException(detailsId));
+
+        plantdetailsrepo.delete(plantdetails);
+
+        return ResponseEntity.ok().build();
     }
 }
