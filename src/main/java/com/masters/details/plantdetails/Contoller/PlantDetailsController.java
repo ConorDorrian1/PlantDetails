@@ -8,15 +8,20 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.awt.print.Book;
 import java.util.List;
 
 //This Class contains the endpoint
 @RestController
 public class PlantDetailsController {
 
-    @Autowired
+    @Autowired //@Autowired will automatically resolve the instance and inject it into the class that declared it.
     PlantDetailsRepository plantdetailsrepo;
+
+    //new
+//    @GetMapping("/blog")
+//    public List<PlantDetails> index(){
+//        return plantdetailsrepo.findAll();
+//    }
 
     // Get All power plant details
     @GetMapping("/plantdetails")
