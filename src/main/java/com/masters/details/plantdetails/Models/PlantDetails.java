@@ -1,13 +1,17 @@
 package com.masters.details.plantdetails.Models;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity //used to denote that this class is going to be an Entity in the database.
 @Table(name = "plantdetails") //which takes some values like the name you are going to name your table
 public class PlantDetails {
     @Id   //denotes that the id is the primary key / identifying key for this table
-    @GeneratedValue(strategy = GenerationType.AUTO)//new
-    private Integer Id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer Id; //Primary Key
     private String plantName;
     private String owner;
     private Integer yearCommissioned;
@@ -20,7 +24,6 @@ public class PlantDetails {
         this.setOwner(owner);
         this.setYearCommissioned(yearCommissioned);
     }
-
 
     public PlantDetails(Integer Id, String plantName, String owner, Integer yearCommissioned) {
         super();
