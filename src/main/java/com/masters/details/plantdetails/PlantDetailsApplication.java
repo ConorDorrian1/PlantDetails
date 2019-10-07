@@ -2,6 +2,7 @@ package com.masters.details.plantdetails;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication   /* @SpringBootApplication Annotation consists of
@@ -11,6 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 							These annotations ared used to start the Spring Boot Application to run on a server.
 	 					*/
 @ComponentScan(basePackages={"com.masters.details.plantdetails.Contoller"}) // So so the controller can access spring boot
+@EnableEurekaClient
 public class PlantDetailsApplication {
 
 	public static void main(String[] args) {
