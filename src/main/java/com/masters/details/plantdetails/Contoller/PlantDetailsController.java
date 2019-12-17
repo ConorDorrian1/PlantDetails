@@ -2,7 +2,6 @@ package com.masters.details.plantdetails.Contoller;
 
 import com.masters.details.plantdetails.Models.PlantDetails;
 import com.masters.details.plantdetails.Repository.PlantDetailsRepository;
-import com.masters.details.plantdetails.Repository.PowerPlantNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -10,7 +10,8 @@ import javax.persistence.Table;
 @Table(name = "plantdetails") //which takes some values like the name you are going to name your table
 public class PlantDetails {
     @Id   //denotes that the id is the primary key / identifying key for this table
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "my_key")  //http://www.jcombat.com/spring/performance-tuning-of-spring-based-application
     private Integer Id; //Primary Key
     private String plantName;
     private String owner;

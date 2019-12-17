@@ -1,10 +1,15 @@
 package com.masters.details.plantdetails;
 
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
+import org.springframework.context.annotation.Bean;
+import org.springframework.jms.annotation.EnableJms;
+import org.springframework.jms.core.JmsTemplate;
+
 
 @SpringBootApplication
 						/* @SpringBootApplication Annotation consists of
@@ -15,10 +20,12 @@ import org.springframework.context.annotation.ComponentScan;
 	 					*/
 //@ComponentScan(basePackages={"com.masters.details.plantdetails.Contoller"}) // So so the controller can access spring boot
 @EnableEurekaClient
+@EnableCircuitBreaker
+@EnableHystrix
+@EnableJms
 public class PlantDetailsApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PlantDetailsApplication.class, args);
 	}
-
 }
